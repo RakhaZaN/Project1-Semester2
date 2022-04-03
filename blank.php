@@ -1,3 +1,6 @@
+<?php
+$page = 'Blank Page';
+?>
 <?php include_once './layout/top.php'; ?>
 <?php include_once './layout/navbar.php'; ?> 
 <?php include_once './layout/sidebar.php'; ?>
