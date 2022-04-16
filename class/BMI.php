@@ -11,7 +11,7 @@ class BMI {
 
     public function nilai()
     {
-        return $this->berat / ($this->tinggi^2);
+        return number_format($this->berat / pow($this->tinggi / 100, 2), 1);
     }
 
     public function status()
