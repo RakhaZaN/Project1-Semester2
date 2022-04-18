@@ -135,10 +135,46 @@ if(isset($_POST['submit'])) {
     </div>
     <!-- /.content-wrapper -->
 
+    <!-- Modal -->
+    <div class="modal fade" id="statusModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Status BMI</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="" alt="status" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+
 <?php include_once './layout/footer.php'; ?>
 <?php include_once './layout/jslib.php'; ?>
 
 <!-- On page JS -->
-<script></script>
+<?php if(isset($_POST['submit'])) { ?>
+  <script>
+    window.onload = function () {
+      $('.modal-body img').attr('src', './assets/images/' + getImage(<?= $nBmi->nilai() ?>))
+      $('#statusModal').modal('show')
+    }
+
+    function getImage(bmi) {
+      if (bmi < 18.5) {
+        return 'under.png'
+      } else if (bmi <= 24.9) {
+        return 'ideal.png'
+      } else if (bmi <= 29.9) {
+        return 'over.png'
+      } else {
+        return 'obesity.png'
+      }
+    }
+  </script>
+<?php } ?>
 
 <?php include_once './layout/bottom.php'; ?>
