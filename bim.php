@@ -6,9 +6,9 @@ require_once './class/BMI.php';
 require_once './class/BMIPasien.php';
 
 $pasien = [
-    new Pasien(1, 'P001', 'Ahmad', 'L'),
-    new Pasien(2, 'P002', 'Rina', 'P'),
-    new Pasien(3, 'P003', 'Lutfi', 'L'),
+    new Pasien(1, 'P001', 'Ahmad', 'L', 'Jakarta', '2002-12-31'),
+    new Pasien(2, 'P002', 'Rina', 'P', 'Bandung', '2000-03-12'),
+    new Pasien(3, 'P003', 'Lutfi', 'L', 'Jakarta', '2001-09-20'),
 ];
 
 $bim = [
@@ -23,6 +23,11 @@ $data = [
     new BMIPasien(3, $bim[2], '2022-01-10', $pasien[2]),
 ];
 
+if(isset($_POST['submit'])) {
+  $nPasien = new Pasien(4, 'P004', $_POST['nama'], $_POST['gender'], $_POST['tmp_lahir'], $_POST['tgl_lahir']);
+  $nBmi = new BMI($_POST['berat'], $_POST['tinggi']);
+  $data[] = new BMIPasien(4, $nBmi, date('Y-m-d'), $nPasien);
+}
 
 ?>
 <?php include_once './layout/top.php'; ?>
@@ -55,9 +60,8 @@ $data = [
         <div class="card">
             <div class="card-header d-flex">
                 <h3 class="card-title">BMI Pasien</h3>
-                <a href="add.php" class="btn btn-success ml-auto">Add New</a>
             </div>
-            <div class="card-body p-0">
+            <div class="card-body p-0 table-responsive">
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -90,6 +94,10 @@ $data = [
                 </table>
             </div>
         </div>
+
+        <center class=" mt-5">
+          <a href="add.php" class="btn btn-success">Add New</a>
+        </center>
 
         <!-- Default box -->
         <!-- <div class="card">
