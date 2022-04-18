@@ -96,7 +96,7 @@ if(isset($_POST['submit'])) {
         </div>
 
         <center class=" mt-5">
-          <a href="add.php" class="btn btn-success">Add New</a>
+          <a href="add.php" class="btn btn-success">Tambah Pasien</a>
         </center>
 
         <!-- Default box -->
