@@ -36,33 +36,12 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+            <a href="https://kreasi.nurulfikri.ac.id/rakh21254ti/record/" class="nav-link">
+              <i class="nav-icon fas fa-tasks"></i>
               <p>
-                Dashboard
-                <i class="right fas fa-angle-left"></i>
+                Praktikum
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Praktikum 1</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Praktikum 2</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Praktikum 3</p>
-                </a>
-              </li>
-            </ul>
           </li>
         </ul>
       </nav>
